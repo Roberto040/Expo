@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Estudiantes</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+		th, td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		.table-danger {
+			background-color: red;
+			color: white;
+		}
+		.table-success {
+			background-color: green;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Estudiantes</h1>
+	<form>
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre"><br><br>
+		<label for="identificacion">Identificación:</label>
+		<input type="text" id="identificacion" name="identificacion"><br><br>
+		<label for="nota1">Nota 1:</label>
+		<input type="number" id="nota1" name="nota1" min="0" max="5"><br><br>
+		<label for="nota2">Nota 2:</label>
+		<input type="number" id="nota2" name="nota2" min="0" max="5"><br><br>
+		<label for="nota3">Nota 3:</label>
+		<input type="number" id="nota3" name="nota3" min="0" max="5"><br><br>
+		<button type="button" onclick="agregarEstudiante()">Agregar estudiante</button>
+	</form>
+	<p><strong>Estudiantes aprobados:</strong> <span id="num-aprobados"></span></p>
+	<p><strong>Estudiantes reprobados:</strong> <span id="num-reprobados"></span></p>
+	<p><strong>Estudiantes con el promedio más alto:</strong> <span id="estudiante-promedio-mayor"></span></p>
+
+	<table id="tabla-estudiantes">
+		<thead>
+			<tr id="fila-encabezados">
+				<th>Nombre del estudiante</th>
+				<th>Identificación</th>
+				<th>Nota 1</th>
+				<th>Nota 2</th>
+				<th>Nota 3</th>
+				<th>Promedio</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="fila-datos" style="display: none;">
+				<td id="dato-nombre"></td>
+				<td id="dato-identificacion"></td>
+				<td id="dato-nota1"></td>
+				<td id="dato-nota2"></td>
+				<td id="dato-nota3"></td>
+				<td id="dato-promedio"></td>
+				<td id="dato-estado"></td>
+				<td>
+					<button onclick="eliminarEstudiante(${i})">Eliminar</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script src="script.js"></script>
+</body>
+</html>
